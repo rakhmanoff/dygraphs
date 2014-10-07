@@ -277,9 +277,12 @@ axes.prototype.willDrawChart = function(e) {
 
         var left = (x - g.getOption('axisLabelWidth')/2);
         if (left + g.getOption('axisLabelWidth') > canvasWidth) {
-          left = canvasWidth - g.getOption('xAxisLabelWidth');
-          label.style.textAlign = "right";
+          label.style.display = "none";
         }
+        else{
+          label.style.display = "block";          
+        }
+        
         if (left < 0) {
           left = 0;
           label.style.textAlign = "left";
